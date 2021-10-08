@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "./lib/",
+    "baseUrl": "./",
+    "module": "CommonJS",
+    "target": "ES2020",
+    "moduleResolution": "node",
+    "paths": {
+      "~/*": ["./src/*"]
+    },
+    "jsx": "react",
+    "lib": [
+      "ES2020",
+      "DOM"
+    ],
+    "strict": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "declarationMap": false,
+    "declaration": false,
+    "composite": false,
+    "exactOptionalPropertyTypes": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "importsNotUsedAsValues":"error",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "skipLibCheck": true
+  },
+  "exclude": [
+    "node_modules",
+    "lib",
+  ],
+  "include": [
+    "**/*.ts"
+  ]
+}
