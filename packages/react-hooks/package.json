@@ -1,0 +1,18 @@
+{
+  "name": "@openformation/react-hooks",
+  "version": "1.0.0",
+  "description": "Common react hooks for web application development",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "scripts": {
+    "build": "rm -rf ./lib && pnpm run build:esm && pnpm run build:cjs",
+    "build:esm": "rm -rf ./lib/esm && tsc",
+    "build:cjs": "rm -rf ./lib/cjs && tsc -p tsconfig.cjs.json"
+  },
+  "dependencies": {
+    "@openformation/use-service": "workspace:*"
+  },
+  "keywords": ["react", "hooks"],
+  "author": "",
+  "license": "MIT"
+}
