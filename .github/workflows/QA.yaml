@@ -3,18 +3,20 @@ on: [push, pull_request]
 jobs:
 
   testAndBuild:
-    - name: Checkout Commit
-      uses: actions/checkout@v1
-    - name: Setup Node
-      uses: actions/setup-node@v1
-      with:
-        node-version: '16'
-    - name: Install pnpm and npm
-      run: |
-        curl -L https://get.pnpm.io/v6.js | node - add --global pnpm@next npm@7
-    - name: Install dependencies
-      run: pnpm install
-    - name: Run tests
-      run: pnpm run test
-    - name: Build
-      run: pnpm run build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Commit
+        uses: actions/checkout@v1
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16'
+      - name: Install pnpm and npm
+        run: |
+          curl -L https://get.pnpm.io/v6.js | node - add --global pnpm@next npm@7
+      - name: Install dependencies
+        run: pnpm install
+      - name: Run tests
+        run: pnpm run test
+      - name: Build
+        run: pnpm run build
