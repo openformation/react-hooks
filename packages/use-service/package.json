@@ -1,0 +1,16 @@
+{
+  "name": "@openformation/use-service",
+  "version": "1.0.0",
+  "description": "Bind services to a react component instance",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "scripts": {
+    "build": "rm -rf ./lib && pnpm run build:esm && pnpm run build:cjs",
+    "build:esm": "rm -rf ./lib/esm && tsc",
+    "build:cjs": "rm -rf ./lib/cjs && tsc -p tsconfig.cjs.json",
+    "test": "jest --verbose src/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}

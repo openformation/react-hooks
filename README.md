@@ -13,6 +13,13 @@
 
 This package is still under development. This message will disappear once the package is ready for testing.
 
+## Packages
+
+| package name | stability | description | Link to README |
+|-|-|-|-|
+| `@openformation/react-hooks` | pre-alpha | Aggregate package containing all hooks | [README](./packages/react-hooks/README.md) |
+| `@openformation/use-service` | pre-alpha | Bind services to a react component instance | [README](./packages/use-service/README.md) |
+
 ## LICENSE
 
 see [LICENSE](./LICENSE)

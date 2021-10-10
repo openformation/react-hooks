@@ -11,4 +11,4 @@
  *
  */
 
-export {};
+export { useService } from "./useService";

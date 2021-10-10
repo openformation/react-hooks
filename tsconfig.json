@@ -1,30 +1,28 @@
 {
   "compilerOptions": {
-    "rootDir": ".",
-    "outDir": "./lib/",
     "baseUrl": "./",
-    "module": "CommonJS",
-    "target": "ES2020",
+    "module": "ESNext",
+    "target": "ESNext",
     "moduleResolution": "node",
     "paths": {
-      "~/*": ["./src/*"]
+      "@openformation/*": ["packages/*/src"]
     },
     "jsx": "react",
     "lib": [
-      "ES2020",
+      "ESNext",
       "DOM"
     ],
     "strict": true,
     "sourceMap": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "declarationMap": false,
-    "declaration": false,
-    "composite": false,
+    "declarationMap": true,
+    "declaration": true,
+    "composite": true,
     "exactOptionalPropertyTypes": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "importsNotUsedAsValues":"error",
+    "importsNotUsedAsValues": "error",
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
@@ -34,11 +32,4 @@
     "noUnusedParameters": true,
     "skipLibCheck": true
   },
-  "exclude": [
-    "node_modules",
-    "lib",
-  ],
-  "include": [
-    "**/*.ts"
-  ]
 }
