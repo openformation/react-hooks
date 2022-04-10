@@ -4,7 +4,6 @@
 
 </p>
 
-
 # @openformation/react-hooks
 
 > Common react hooks for web application development
@@ -15,10 +14,11 @@ This package is still under development. This message will disappear once the pa
 
 ## Packages
 
-| package name | stability | description | Link to README |
-|-|-|-|-|
-| `@openformation/react-hooks` | pre-alpha | Aggregate package containing all hooks | [README](./packages/react-hooks/README.md) |
-| `@openformation/use-service` | pre-alpha | Bind services to a react component instance | [README](./packages/use-service/README.md) |
+| package name                  | stability | description                                           | Link to README                              |
+| ----------------------------- | --------- | ----------------------------------------------------- | ------------------------------------------- |
+| `@openformation/react-hooks`  | pre-alpha | Aggregate package containing all hooks                | [README](./packages/react-hooks/README.md)  |
+| `@openformation/use-business` | pre-alpha | Handle busy state for multiple asynchronous processes | [README](./packages/use-business/README.md) |
+| `@openformation/use-service`  | pre-alpha | Bind services to a react component instance           | [README](./packages/use-service/README.md)  |
 
 ## LICENSE
 
