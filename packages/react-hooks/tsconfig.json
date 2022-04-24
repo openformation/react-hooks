@@ -6,6 +6,9 @@
   },
   "references": [
     {
+      "path": "../use-business"
+    },
+    {
       "path": "../use-service"
     }
   ],
