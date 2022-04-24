@@ -11,4 +11,5 @@
  *
  */
 
+export { useBusiness } from "@openformation/use-business";
 export { useService } from "@openformation/use-service";

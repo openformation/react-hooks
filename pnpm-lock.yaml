@@ -30,8 +30,10 @@ importers:
 
   packages/react-hooks:
     specifiers:
+      '@openformation/use-business': workspace:*
       '@openformation/use-service': workspace:*
     dependencies:
+      '@openformation/use-business': link:../use-business
       '@openformation/use-service': link:../use-service
 
   packages/use-business:
