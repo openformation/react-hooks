@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -e
+
+#
+# Removes all build artifacts AND
+# removes all `node_modules`, both global and per-package.
+#
+# Usage:
+#
+# ````sh
+# scripts/nuke
+# ````
+#
+
+echo "💣 Nuking ..."
+
+pnpm clean
+
+echo "📦 Removing all local node_modules ..."
+find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
+
+echo "✅ Local environment was reset. Run 'pnpm install' to prepare the local environment again."
