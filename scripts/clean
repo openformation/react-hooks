@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -e
+
+#
+# Removes all build artifacts
+#
+# Usage:
+#
+# ````sh
+# scripts/build
+# ````
+#
+
+echo "🗑 Removing all build artifacts..."
+
+pnpm run -r --stream clean
+
+echo "✅ All build artifacts were removed sucessfully."
