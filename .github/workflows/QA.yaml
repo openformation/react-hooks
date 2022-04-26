@@ -16,6 +16,8 @@ jobs:
           curl -L https://get.pnpm.io/v6.js | node - add --global pnpm@next npm@7
       - name: Install dependencies
         run: pnpm install
+      - name: Lint code base
+        run: pnpm run lint
       - name: Run tests
         run: pnpm run test
       - name: Build

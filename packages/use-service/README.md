@@ -34,7 +34,7 @@ pnpm add --save @openformation/use-service
 useService = (
   serviceFactoryFn: (deps: Dependencies) => Service,
   deps: Dependencies
-) => Service
+) => Service;
 ```
 
 `serviceFactoryFn` is a function that takes one argument `Dependencies` and returns a `Service`.
@@ -70,7 +70,10 @@ import { useService } from "@openformation/use-service";
 
 const TodoList: React.FC<{ serviceUri: string }> = (props) => {
   const api = useService(makeApi, { serviceUri: props.serviceUri });
-  const createTodo = React.useCallback(() => api.addTodo({ label: "New Todo" }), [api]);
+  const createTodo = React.useCallback(
+    () => api.addTodo({ label: "New Todo" }),
+    [api]
+  );
 
   /* ... */
 };
