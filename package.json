@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "build": "./scripts/build",
+    "clean": "./scripts/clean",
     "lint": "./scripts/lint",
     "test": "./scripts/test"
   },
