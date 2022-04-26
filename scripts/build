@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -e
+
+#
+# Builds all packages
+#
+# Usage:
+#
+# ````sh
+# scripts/build
+# ````
+#
+
+echo "🛠 Building all packages..."
+
+pnpm recursive run --stream build
+
+echo "✅ All packages were built sucessfully."

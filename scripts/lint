@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -e
+
+#
+# Lint all source files
+#
+# Usage:
+#
+# ````sh
+# scripts/lint
+# ````
+#
+
+echo "🧐 Linting all source files..."
+
+editorconfig-checker
+prettier --check "**/*.{ts,tsx,js,json,css,md}" --ignore-path .gitignore
+
+echo "✅ All source files are 👌."

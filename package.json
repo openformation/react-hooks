@@ -1,11 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "build": "pnpm recursive run --stream build",
-    "test": "pnpm recursive run --stream test",
-    "lint": "pnpm lint:editorconfig && pnpm lint:prettier",
-    "lint:editorconfig": "editorconfig-checker",
-    "lint:prettier": "prettier --check **/*.{ts,tsx,js,json,css,md} --ignore-path .gitignore"
+    "build": "./scripts/build",
+    "lint": "./scripts/lint",
+    "test": "./scripts/test"
   },
   "husky": {
     "hooks": {
