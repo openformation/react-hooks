@@ -51,7 +51,7 @@ const LoadMoreList = <I>(props: {
   const [items, setItems] = React.useState<I[]>([]);
   const [page, setPage] = React.useState(0);
   const business = useBusiness();
-  const loadMore = Reac.useCallback(() => setPage((page) => page + 1), [
+  const loadMore = React.useCallback(() => setPage((page) => page + 1), [
     setPage,
   ]);
 
@@ -92,7 +92,7 @@ const LoadMoreList = <I>(props: {
   const [items, setItems] = React.useState<I[]>([]);
   const [page, setPage] = React.useState(0);
   const business = useBusiness();
-  const loadMore = Reac.useCallback(() => setPage((page) => page + 1), [
+  const loadMore = React.useCallback(() => setPage((page) => page + 1), [
     setPage,
   ]);
 
