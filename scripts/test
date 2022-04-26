@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -e
+
+#
+# Runs unit tests in all packages
+#
+# Usage:
+#
+# ````sh
+# scripts/test
+# ````
+#
+
+echo "🎯 Running unit tests in all packages..."
+
+pnpm recursive run --stream test
+
+echo "✅ All unit tests are green."
