@@ -14,7 +14,10 @@
     "@openformation/use-service": "workspace:*",
     "@openformation/use-pagination": "workspace:*"
   },
-  "keywords": ["react", "hooks"],
+  "keywords": [
+    "react",
+    "hooks"
+  ],
   "author": "",
   "license": "MIT"
 }

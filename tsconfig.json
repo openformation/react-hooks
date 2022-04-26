@@ -8,10 +8,7 @@
       "@openformation/*": ["packages/*/src"]
     },
     "jsx": "react",
-    "lib": [
-      "ESNext",
-      "DOM"
-    ],
+    "lib": ["ESNext", "DOM"],
     "strict": true,
     "sourceMap": true,
     "esModuleInterop": true,
@@ -31,5 +28,5 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "skipLibCheck": true
-  },
+  }
 }

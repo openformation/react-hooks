@@ -2,7 +2,7 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "rootDir": "./src/",
-    "outDir": "./lib/esm/",
+    "outDir": "./lib/esm/"
   },
   "references": [
     {
@@ -15,11 +15,6 @@
       "path": "../use-pagination"
     }
   ],
-  "exclude": [
-    "node_modules",
-    "lib",
-  ],
-  "include": [
-    "**/*.ts"
-  ]
+  "exclude": ["node_modules", "lib"],
+  "include": ["**/*.ts"]
 }
