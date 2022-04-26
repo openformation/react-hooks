@@ -59,7 +59,7 @@ const LoadMoreList = <I>(props: {
     const loadedItems = await props.loadItems(page);
 
     setItems((items) => [...items, ...loadedItems]);
-  }, [page]);
+}, [page, setItems]);
 
   return (
     <>
@@ -100,7 +100,7 @@ const LoadMoreList = <I>(props: {
     const loadedItems = await business.perform(() => props.loadItems(page));
 
     setItems((items) => [...items, ...loadedItems]);
-  }, [page]);
+  }, [page, setItems]);
 
   return (
     <>
