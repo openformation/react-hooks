@@ -1,0 +1,146 @@
+<p align="center">
+
+<img width="250" src="./hooks.svg" alt="Two fishing hooks">
+
+</p>
+
+# @openformation/use-pagination
+
+> Setup a pagination context and exposes helper to control
+
+## Installation
+
+Using npm:
+
+```
+npm install --save @openformation/use-pagination
+```
+
+Using yarn:
+
+```
+yarn add @openformation/use-pagination
+```
+
+Using pnpm:
+
+```
+pnpm add --save @openformation/use-pagination
+```
+
+## API
+
+```typescript
+usePagination = (spec: {
+  initial?: number,
+  min?: number,
+  max?: number,
+  steps?: number,
+}) => {
+  current: number,
+  isCurrent: (checkValue: number) => boolean,
+  setCurrent: (nextValue: number) => void,
+  next: () => void,
+  prev: () => void,
+  hasNext: () => boolean, 
+  hasPrev: () => boolean, 
+}
+```
+
+`initial` is the page value, pagination will start to work at. If value hurts boundaries given by `min` and/or `max`, it internally becomes adjusted to fit closest boundary.
+*Optional, default value is 0.*
+
+`min` & `max` define boundaries for page value. 
+*Optional, default values are "undefined"*
+
+`steps` is the amount internal page value will be increased or decreased by use of `next` or `prev`. Boundaries set by `min` and/or `max` will be respected for these operations.
+*Optional, default value is 1.*
+ 
+*Returned API*
+
+`current` is the current page value itself.
+
+`isCurrent` takes a number and checks for equality to current page value.
+
+`next` increases current page value by `steps`, but not higher than `max`.
+
+`prev` decreases current page value by `steps`, but not lower than `min`.
+
+`hasNext` checks for increasability. It returns `true` if `next()` would increase page value, otherwise `false`.
+
+`hasPrev` checks for decreasability. It returns `true` if `prev()` would decrease page value, otherwise `false`.
+
+## Usage
+
+Pagination is a widely used UX pattern in web, so an implementation should easy to do. 
+
+Another use-case could be a slidable.
+
+```typescript
+const SlideShow: React.FC<{
+  slides: Slide[], 
+}> = props => {
+  const { prev, next, hasPrev, hasNext, setCurrent, current } = usePagination({
+    initial: 0,
+    min: 0,
+    max: props.slides.length - 1,
+  });
+
+  return (
+    <SlideView>
+      <RowWithSlides slideTo={current}>
+        {props.slides.map(Slide)}
+      </RowWithSlides>
+      <Thumbs>
+        {props.slides.map((slide, index) => (
+          <Thumb 
+            key={index}
+            onClick={() => setCurrent(index)}
+          />
+        ))}
+      </Thumbs>
+      <PrevButton onClick={prev} disabled={!hasPrev()} />
+      <NextButton onClick={next} disabled={!hasNext()} />
+    </SlideView>
+  );
+}
+```
+
+A not as obviously use-case is a tab-system.
+
+```typescript
+enum Tabs {
+  "FEATURES",
+  "TEAM",
+  "PRICING",
+  "FAQ",
+}
+
+const Tabs: React.FC = () => {
+  const { isCurrent: isActiveTab, setCurrent: setTab } = usePagination({
+    initial: Tabs.FEATURES,
+  });
+
+  return (
+    <TabContainer>
+      <TabBar>
+        <Tab onClick={() => setTab(Tabs.FEATURES)}>Features<Tab>
+        <Tab onClick={() => setTab(Tabs.TEAM)}>Team<Tab>
+        <Tab onClick={() => setTab(Tabs.PRICING)}>Pricing<Tab>
+        <Tab onClick={() => setTab(Tabs.FAQ)}>Questions<Tab>
+      </TabBar>
+      <TabContents>
+        {isActiveTab(Tabs.FEATURES) ? <ContentForFeatures /> : null}
+        {isActiveTab(Tabs.TEAM) ? <ContentForTeam /> : null}
+        {isActiveTab(Tabs.PRICING) ? <ContentForPricing /> : null}
+        {isActiveTab(Tabs.FAQ) ? <ContentForFaq /> : null}
+      </TabContents>
+    </TabContainer>
+  );
+}
+
+```
+
+## LICENSE
+
+see [LICENSE](./LICENSE)

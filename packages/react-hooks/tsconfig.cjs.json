@@ -10,6 +10,9 @@
     },
     {
       "path": "../use-service"
+    },
+    {
+      "path": "../use-pagination"
     }
   ]
 }
