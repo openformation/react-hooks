@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "postinstall": "husky install",
     "build": "./scripts/build",
     "clean": "./scripts/clean",
     "lint": "./scripts/lint",
