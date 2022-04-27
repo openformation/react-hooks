@@ -8,11 +8,6 @@
     "nuke": "./scripts/nuke",
     "test": "./scripts/test"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "**/*.{ts,tsx,js,json,css,md}": [
       "prettier --write"
