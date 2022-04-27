@@ -31,12 +31,17 @@ importers:
   packages/react-hooks:
     specifiers:
       '@openformation/use-business': workspace:*
+      '@openformation/use-pagination': workspace:*
       '@openformation/use-service': workspace:*
     dependencies:
       '@openformation/use-business': link:../use-business
+      '@openformation/use-pagination': link:../use-pagination
       '@openformation/use-service': link:../use-service
 
   packages/use-business:
+    specifiers: {}
+
+  packages/use-pagination:
     specifiers: {}
 
   packages/use-service:
