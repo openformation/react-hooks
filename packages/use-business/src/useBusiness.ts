@@ -32,7 +32,7 @@ export const useBusiness = () => {
 
       return process;
     },
-    [setProcesses],
+    [setProcesses]
   );
 
   React.useEffect(() => {
