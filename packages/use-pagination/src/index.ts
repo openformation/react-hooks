@@ -11,6 +11,4 @@
  *
  */
 
-export { useBusiness } from "@openformation/use-business";
-export { useService } from "@openformation/use-service";
-export { usePagination } from "@openformation/use-pagination";
+export { usePagination } from "./usePagination";

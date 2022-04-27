@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "@openformation/use-business": "workspace:*",
-    "@openformation/use-service": "workspace:*"
+    "@openformation/use-service": "workspace:*",
+    "@openformation/use-pagination": "workspace:*"
   },
   "keywords": ["react", "hooks"],
   "author": "",
