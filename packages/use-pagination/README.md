@@ -106,7 +106,7 @@ const SlideShow: React.FC<{
 }
 ```
 
-A not as obviously use-case is a tab-system.
+A not as obvious use-case is a tab-system.
 
 ```typescript
 enum Tabs {
