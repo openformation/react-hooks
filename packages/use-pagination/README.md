@@ -53,7 +53,7 @@ usePagination = (spec: {
 `min` & `max` define the boundaries for the value that `current` can take. 
 *Optional, default values are `-Infinity` for `min` and `Infinity` for `max`*
 
-`steps` is the amount internal page value will be increased or decreased by use of `next` or `prev`. Boundaries set by `min` and/or `max` will be respected for these operations.
+`steps` is the amount that `current` will be increased or decreased by, using `next` or `prev` respectively. The boundaries set by `min` and/or `max` will be respected for those operations.
 *Optional, default value is 1.*
  
 *Returned API*
