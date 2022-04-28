@@ -6,7 +6,7 @@
 
 # @openformation/use-pagination
 
-> Setup a pagination context and exposes helper to control
+> Sets up a pagination state and exposes helpers to control it
 
 ## Installation
 
