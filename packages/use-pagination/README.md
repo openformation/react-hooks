@@ -47,7 +47,7 @@ usePagination = (spec: {
 }
 ```
 
-`initial` is the page value, pagination will start to work at. If value hurts boundaries given by `min` and/or `max`, it internally becomes adjusted to fit closest boundary.
+`initial` is the page value, pagination will start to work at. If this value hurts the boundaries given by `min` and/or `max`, it internally gets clamped to fit the closest boundary.
 *Optional, default value is 0.*
 
 `min` & `max` define boundaries for page value. 
