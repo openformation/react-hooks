@@ -16,8 +16,8 @@ import { useCallback, useState } from "react";
 export const usePagination = ({
   initial = 0,
   steps = 1,
-  min,
-  max,
+  min = -Infinity,
+  max = Infinity,
 }: {
   initial?: number;
   min?: number;
@@ -25,7 +25,7 @@ export const usePagination = ({
   steps?: number;
 } = {}) => {
   const keepValueInsideRange = useCallback(
-    (value: number) => Math.min(max ?? Infinity, Math.max(min ?? -Infinity, value)),
+    (value: number) => Math.min(max, Math.max(min, value)),
     [min, max]
   );
   const [current, setCurrent] = useState(keepValueInsideRange(initial));
@@ -33,14 +33,10 @@ export const usePagination = ({
   return {
     current,
     isCurrent: (value: number) => value === current,
-    setCurrent: (value: number) => setCurrent(
-      Math.min(max ?? Infinity, Math.max(min ?? -Infinity, value))
-    ),
-    next: () =>
-      setCurrent((target) => Math.min(max ?? Infinity, target + steps)),
-    prev: () =>
-      setCurrent((target) => Math.max(min ?? -Infinity, target - steps)),
-    hasNext: () => current < (max ?? Infinity),
-    hasPrev: () => current > (min ?? -Infinity),
+    setCurrent: (nextValue: number) => setCurrent(keepValueInsideRange(nextValue)),
+    next: () => setCurrent((value: number) => keepValueInsideRange(value + steps)),
+    prev: () => setCurrent((value: number) => keepValueInsideRange(value - steps)),
+    hasNext: () => current < max,
+    hasPrev: () => current > min,
   };
 };
