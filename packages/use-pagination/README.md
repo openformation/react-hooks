@@ -72,7 +72,7 @@ usePagination = (spec: {
 
 ## Usage
 
-Pagination is a widely used UX pattern in web, so an implementation should easy to do. 
+Pagination is a widely used UX pattern in web development, so an implementation should be easy to do. 
 
 Another use-case could be a slidable.
 
