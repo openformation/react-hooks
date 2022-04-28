@@ -62,7 +62,7 @@ usePagination = (spec: {
 
 `isCurrent` takes a number and checks for equality to current page value.
 
-`next` increases current page value by `steps`, but not higher than `max`.
+`next` increases `current` by `steps`, but not higher than `max`.
 
 `prev` decreases `current` value by `steps`, but not lower than `min`.
 
