@@ -64,7 +64,7 @@ usePagination = (spec: {
 
 `next` increases current page value by `steps`, but not higher than `max`.
 
-`prev` decreases current page value by `steps`, but not lower than `min`.
+`prev` decreases `current` value by `steps`, but not lower than `min`.
 
 `hasNext` checks for increasability. It returns `true` if `next()` would increase page value, otherwise `false`.
 
