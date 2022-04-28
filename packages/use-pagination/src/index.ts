@@ -7,7 +7,7 @@
  */
 
 /**
- * @author Wilhelm Behncke <wilhelm.behncke@openformation.io>
+ * @author Henrik Radandt <henrik.radandt@openformation.io>
  *
  */
 
