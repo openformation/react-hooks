@@ -42,21 +42,21 @@ usePagination = (spec: {
   setCurrent: (nextValue: number) => void,
   next: () => void,
   prev: () => void,
-  hasNext: () => boolean, 
-  hasPrev: () => boolean, 
+  hasNext: () => boolean,
+  hasPrev: () => boolean,
 }
 ```
 
 `initial` is the page value, pagination will start to work at. If this value hurts the boundaries given by `min` and/or `max`, it internally gets clamped to fit the closest boundary.
-*Optional, default value is 0.*
+_Optional, default value is 0._
 
-`min` & `max` define the boundaries for the value that `current` can take. 
-*Optional, default values are `-Infinity` for `min` and `Infinity` for `max`*
+`min` & `max` define the boundaries for the value that `current` can take.
+_Optional, default values are `-Infinity` for `min` and `Infinity` for `max`_
 
 `steps` is the amount that `current` will be increased or decreased by, using `next` or `prev` respectively. The boundaries set by `min` and/or `max` will be respected for those operations.
-*Optional, default value is 1.*
- 
-*Returned API*
+_Optional, default value is 1._
+
+_Returned API_
 
 `current` is the current page value itself.
 
@@ -72,14 +72,14 @@ usePagination = (spec: {
 
 ## Usage
 
-Pagination is a widely used UX pattern in web development, so an implementation should be easy to do. 
+Pagination is a widely used UX pattern in web development, so an implementation should be easy to do.
 
 Another use-case could be a slidable.
 
 ```typescript
 const SlideShow: React.FC<{
-  slides: Slide[], 
-}> = props => {
+  slides: Slide[];
+}> = (props) => {
   const { prev, next, hasPrev, hasNext, setCurrent, current } = usePagination({
     initial: 0,
     min: 0,
@@ -88,22 +88,17 @@ const SlideShow: React.FC<{
 
   return (
     <SlideView>
-      <RowWithSlides slideTo={current}>
-        {props.slides.map(Slide)}
-      </RowWithSlides>
+      <RowWithSlides slideTo={current}>{props.slides.map(Slide)}</RowWithSlides>
       <Thumbs>
         {props.slides.map((slide, index) => (
-          <Thumb 
-            key={index}
-            onClick={() => setCurrent(index)}
-          />
+          <Thumb key={index} onClick={() => setCurrent(index)} />
         ))}
       </Thumbs>
       <PrevButton onClick={prev} disabled={!hasPrev()} />
       <NextButton onClick={next} disabled={!hasNext()} />
     </SlideView>
   );
-}
+};
 ```
 
 A not as obvious use-case is a tab-system.
