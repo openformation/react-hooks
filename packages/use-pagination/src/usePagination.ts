@@ -33,9 +33,12 @@ export const usePagination = ({
   return {
     current,
     isCurrent: (value: number) => value === current,
-    setCurrent: (nextValue: number) => setCurrent(keepValueInsideRange(nextValue)),
-    next: () => setCurrent((value: number) => keepValueInsideRange(value + steps)),
-    prev: () => setCurrent((value: number) => keepValueInsideRange(value - steps)),
+    setCurrent: (nextValue: number) =>
+      setCurrent(keepValueInsideRange(nextValue)),
+    next: () =>
+      setCurrent((value: number) => keepValueInsideRange(value + steps)),
+    prev: () =>
+      setCurrent((value: number) => keepValueInsideRange(value - steps)),
     hasNext: () => current < max,
     hasPrev: () => current > min,
   };
