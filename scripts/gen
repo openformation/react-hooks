@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -e
+
+#
+# Generate code from a template
+#
+# Usage:
+#
+# ````sh
+# scripts/gen
+# ````
+#
+
+plop --plopfile .plop/plopfile.js
