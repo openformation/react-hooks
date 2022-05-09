@@ -7,18 +7,29 @@ jobs:
     steps:
       - name: Checkout Commit
         uses: actions/checkout@v1
-      - name: Setup Node
-        uses: actions/setup-node@v1
+
+      - name: Read .nvmrc
+        run: echo ::set-output name=NVMRC::$(cat .nvmrc)
+        id: nvm
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          node-version: '16'
-      - name: Install pnpm and npm
-        run: |
-          curl -L https://get.pnpm.io/v6.js | node - add --global pnpm@next npm@7
+          node-version: "${{ steps.nvm.outputs.NVMRC }}"
+
+      - name: Setup Pnpm
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 7.0.1
+
       - name: Install dependencies
         run: pnpm install
+
       - name: Lint code base
         run: pnpm run lint
+
       - name: Run tests
         run: pnpm run test
+
       - name: Build
         run: pnpm run build
